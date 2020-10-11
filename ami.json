@@ -29,11 +29,6 @@
     ],
     "provisioners": [
         {
-            "type": "file",
-            "source": "/Users/gao.xiaob/Desktop/webapp",
-            "destination": "/home/ubuntu"
-        },
-        {
             "type": "shell",
             "environment_vars": [
                 "FOO=foo"
