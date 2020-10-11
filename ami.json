@@ -11,11 +11,11 @@
             "access_key": "{{ user `AWS_ACCESS_KEY` }}",
             "secret_key": "{{ user `AWS_SECRET_KEY` }}",
             "region": "{{ user `AWS_REGION` }}",
-            "instance_type": "t2.micro",
             "subnet_id": "{{ user `AWS_SUBNET_ID` }}",
             "source_ami": "ami-0817d428a6fb68645",
+            "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "csye6225_{{timestamp}}",
+            "ami_name": "csye6225_a4_{{timestamp}}",
             "ami_description": "Ubuntu AMI for CSYE 6225 - Fall 2020",
             "launch_block_device_mappings": [
                 {
@@ -30,15 +30,11 @@
     "provisioners": [
         {
             "type": "shell",
-            "environment_vars": [
-                "FOO=foo"
-            ],
             "inline": [
                 "sleep 30",
                 "sudo apt-get update",
                 "sudo apt-get install python3.6",
-                "python3 --version",
-                "ls -l /home/ubuntu/webapp"
+                "python3 --version"
             ]
         }
     ]
