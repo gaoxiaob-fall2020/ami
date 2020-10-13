@@ -3,7 +3,9 @@
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
         "AWS_REGION": "",
-        "AWS_SUBNET_ID": ""
+        "AWS_SUBNET_ID": "",
+        "SOURCE_AMI": "",
+        "SSH_USERNAME": ""
     },
     "builders": [
         {
@@ -12,11 +14,11 @@
             "secret_key": "{{ user `AWS_SECRET_KEY` }}",
             "region": "{{ user `AWS_REGION` }}",
             "subnet_id": "{{ user `AWS_SUBNET_ID` }}",
-            "source_ami": "ami-0817d428a6fb68645",
+            "source_ami": "{{ user `SOURCE_AMI` }}",
             "instance_type": "t2.micro",
-            "ssh_username": "ubuntu",
-            "ami_name": "csye6225_a4_{{timestamp}}",
-            "ami_description": "Ubuntu AMI for CSYE 6225 - Fall 2020",
+            "ssh_username": "{{ user `SSH_USERNAME` }}",
+            "ami_name": "a4_{{timestamp}}",
+            "ami_description": "",
             "launch_block_device_mappings": [
                 {
                     "device_name": "/dev/sda1",
@@ -33,8 +35,9 @@
             "inline": [
                 "sleep 30",
                 "sudo apt-get update",
-                "sudo apt-get install python3.6",
-                "python3 --version"
+                "sudo apt-get -y install python3-pip",
+                "python3 --version",
+                "pip3 --version"
             ]
         }
     ]
