@@ -2,10 +2,10 @@
     "variables": {
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
-        "AWS_REGION": "",
+        "AWS_REGION": "us-east-1",
         "AWS_SUBNET_ID": "",
-        "SOURCE_AMI": "",
-        "SSH_USERNAME": ""
+        "SOURCE_AMI": "ami-0817d428a6fb68645",
+        "SSH_USERNAME": "ubuntu"
     },
     "builders": [
         {
