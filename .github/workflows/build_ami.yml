@@ -1,0 +1,34 @@
+name: Run Packer Build
+
+on:
+  push:
+   
+jobs:
+  packer_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      # Validate template
+      - name: Validate template
+        uses: operatehappy/packer-github-actions@master
+        with:
+            command: validate
+            arguments: -syntax-only
+            target: ami.json
+   
+     # Build artifact
+      - name: Build artifact
+        uses: operatehappy/packer-github-actions@master
+        with:
+          command: build
+          arguments: "-color=false -on-error=abort"
+          target: ami.json
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
+          SOURCE_AMI: ${{ secrets.SOURCE_AMI }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
