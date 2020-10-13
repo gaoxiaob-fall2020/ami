@@ -26,7 +26,8 @@
                     "volume_type": "gp2",
                     "delete_on_termination": true
                 }
-            ]
+            ],
+            "ami_users": ["034529923724"]
         }
     ],
     "provisioners": [
