@@ -27,7 +27,9 @@
                     "delete_on_termination": true
                 }
             ],
-            "ami_users": ["034529923724"]
+            "ami_users": [
+                "034529923724"
+            ]
         }
     ],
     "provisioners": [
@@ -38,7 +40,9 @@
                 "sudo apt-get update",
                 "sudo apt-get -y install python3-pip",
                 "python3 --version",
-                "pip3 --version"
+                "pip3 --version",
+                "sudo apt-get install unzip",
+                "sudo apt-get -y install python3-dev default-libmysqlclient-dev build-essential"
             ]
         }
     ]
