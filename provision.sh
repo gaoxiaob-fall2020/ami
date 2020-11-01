@@ -19,7 +19,7 @@ sudo apt-get install unzip
 sudo apt-get -y install python3-dev default-libmysqlclient-dev build-essential
 
 # Install AWS CodeDeploy
-sudo apt-get install ruby
+sudo apt-get -y install ruby
 sudo apt-get -y install wget
 cd /home/ubuntu
 echo $region
