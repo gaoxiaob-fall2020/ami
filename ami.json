@@ -36,7 +36,7 @@
         {
             "type": "shell",
             "environment_vars": [
-                "region={{ user `AWS_region` }}"
+                "region={{ user `AWS_REGION` }}"
             ],
             "script": "./provision.sh"
         }
