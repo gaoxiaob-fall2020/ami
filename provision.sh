@@ -22,7 +22,7 @@ sudo apt-get -y install python3-dev default-libmysqlclient-dev build-essential
 sudo apt-get -y install wget
 cd /home/ubuntu
 echo $region
-wget https://aws-codedeploy-${region}.s3.${region}-identifier.amazonaws.com/latest/install 
+wget https://aws-codedeploy-${region}.s3.${region}.amazonaws.com/latest/install 
 chmod +x ./install
 sudo ./install auto
 sudo service codedeploy-agent status
