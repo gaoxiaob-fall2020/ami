@@ -7,8 +7,8 @@ sudo apt-get update
 sudo apt-get -y install python3-pip
 python3 --version
 pip3 --version
-alias python=python3
-alias pip=pip3
+# alias python=python3
+# alias pip=pip3
 python --version
 pip3 --version
 
