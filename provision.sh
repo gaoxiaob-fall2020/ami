@@ -9,8 +9,6 @@ python3 --version
 pip3 --version
 # alias python=python3
 # alias pip=pip3
-python --version
-pip3 --version
 
 # Install unzip
 sudo apt-get install unzip
