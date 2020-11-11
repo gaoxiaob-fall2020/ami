@@ -26,4 +26,4 @@
     cd <repo-root>
     packer build ./ami.json
     
-    demo
+    demo 6
