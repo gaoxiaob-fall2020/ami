@@ -32,3 +32,6 @@ sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 echo '<-----'
 whoami
 echo '----->'
+
+# Install nginx server
+sudo apt-get -y install nginx
